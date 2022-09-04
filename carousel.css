@@ -49,12 +49,11 @@ h2 {
 }
 .carousel nav button {
   flex: 0 0 auto;
-  margin: 0 4px;
+  margin: 0 5px;
   cursor: pointer;
-  color: #FF5733;
+  color: #333;
   background: none;
-  border: 2px solid;
+  border: 1px solid;
   letter-spacing: 1px;
   padding: 5px 10px;
-  border-radius: 10px;
 }
