@@ -1,136 +1,77 @@
-:root {
-  --crsl-bg: transparent;
-  --box-bg: #1e272e;
-  --box-shadow: #0000001c;
-  --box-shadow-border: #0000000f;
-  --box-border: #fff;
-}
-
-html, body {
-  padding: 0;
+body {
   margin: 0;
-  width: 100%;
-  height: 100%;
-  background: #2f3539;
-  background: -moz-radial-gradient(circle, #2f3539 0%, #1e272e 100%);
-  background: -webkit-radial-gradient(circle, #2f3539 0%, #1e272e 100%);
-  background: radial-gradient(circle, #2f3539 0%, #1e272e 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2f3539",endColorstr="#1e272e",GradientType=1);
-}
-html *, body * {
-  font-family: "Source Sans Pro", sans-serif;
-}
-html > p, body > p {
-  font-size: 0.95em;
-  font-weight: bold;
-  position: absolute;
-  top: 7.5%;
-  width: 100%;
-  letter-spacing: 4px;
-  text-transform: uppercase;
+  background: lightgray;
   text-align: center;
-  color: white;
-  user-select: none;
+  font-family: sans-serif;
+  color: #fefefe;
 }
-html > .carousel, body > .carousel {
-  padding-top: 125px;
+.container {
+  position: relative;
+  width: 320px;
+  margin: 100px auto 0 auto;
+  perspective: 1000px;
 }
 
 .carousel {
-  position: relative;
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-}
-.carousel__prev, .carousel__next {
   position: absolute;
-  bottom: -15%;
-  transition: transform 0.25s ease;
-}
-.carousel__prev i, .carousel__next i {
-  font-size: 60px;
-  color: var(--box-border);
-  cursor: pointer;
-}
-.carousel__prev:hover, .carousel__next:hover {
-  transform: scale(1.25);
-}
-.carousel__prev {
-  left: 40%;
-}
-.carousel__next {
-  right: 40%;
-}
-.carousel__body {
-  width: 100%;
-  padding: 20px 0 50px 0;
-  overflow: hidden;
-}
-.carousel__body .carousel__slider {
-  position: relative;
-  transition: transform 1s ease-in-out;
-  background: var(--crsl-bg);
-}
-.carousel__body .carousel__slider__item {
-  position: relative;
-  display: block;
-  float: left;
-  box-sizing: border-box;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.carousel__body .carousel__slider__item .item__3d-frame {
-  position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 1s ease-in-out;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+  transform-style: preserve-3d; 
+  animation: rotate360 60s infinite forwards linear;
 }
-.carousel__body .carousel__slider__item .item__3d-frame:after {
-  content: "";
+.carousel__face { 
   position: absolute;
-  bottom: -15%;
-  width: 100%;
-  height: 40px;
-  background: var(--box-shadow);
-  box-shadow: 0px 0px 5px 5px var(--box-shadow);
-  transform: rotateX(90deg) translate3d(0px, -20px, 0px);
-  opacity: 0.85;
-}
-.carousel__body .carousel__slider__item .item__3d-frame__box {
+  width: 300px;
+  height: 187px;
+  top: 20px;
+  left: 10px;
+  right: 10px;
+  background-size: cover;
+  box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.5);
   display: flex;
-  align-items: center;
-  vertical-align: middle;
-  text-align: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  border-color: var(--box-border);
-  background: var(--box-bg);
-  border-width: 3px;
-  border-style: solid;
 }
-.carousel__body .carousel__slider__item .item__3d-frame__box h1 {
-  font-size: 7em;
-  width: 100%;
-  color: var(--box-border);
+
+span {
+  margin: auto;
+  font-size: 2rem;
 }
-.carousel__body .carousel__slider__item .item__3d-frame__box--right, .carousel__body .carousel__slider__item .item__3d-frame__box--left {
-  top: 0;
-  width: 40px;
-  backface-visibility: hidden;
-}
-.carousel__body .carousel__slider__item .item__3d-frame__box--left {
-  left: 0;
-  border-left-width: 5px;
-  transform: translate3d(1px, 0, -40px) rotateY(-90deg);
-  transform-origin: 0%;
-}
-.carousel__body .carousel__slider__item .item__3d-frame__box--right {
-  right: 0;
-  border-right-width: 5px;
-  transform: translate3d(-1px, 0, -40px) rotateY(90deg);
-  transform-origin: 100%;
+
+
+.carousel__face:nth-child(1) {
+  background-image: url("index_files/milkbread.jpeg");
+  transform: rotateY(  0deg) translateZ(430px); }
+.carousel__face:nth-child(2) { 
+  background-image: url("https://images.pexels.com/photos/1258865/pexels-photo-1258865.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    transform: rotateY( 40deg) translateZ(430px); }
+.carousel__face:nth-child(3) {
+  background-image: url("https://images.pexels.com/photos/808466/pexels-photo-808466.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY( 80deg) translateZ(430px); }
+.carousel__face:nth-child(4) {
+  background-image: url("https://images.pexels.com/photos/1394841/pexels-photo-1394841.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(120deg) translateZ(430px); }
+.carousel__face:nth-child(5) { 
+  background-image: url("https://images.pexels.com/photos/969679/pexels-photo-969679.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+ transform: rotateY(160deg) translateZ(430px); }
+.carousel__face:nth-child(6) { 
+  background-image: url("https://images.pexels.com/photos/1834400/pexels-photo-1834400.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+ transform: rotateY(200deg) translateZ(430px); }
+.carousel__face:nth-child(7) { 
+  background-image: url("https://images.pexels.com/photos/1415268/pexels-photo-1415268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+ transform: rotateY(240deg) translateZ(430px); }
+.carousel__face:nth-child(8) {
+  background-image: url("https://images.pexels.com/photos/135018/pexels-photo-135018.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(280deg) translateZ(430px); }
+.carousel__face:nth-child(9) {
+  background-image: url("https://images.pexels.com/photos/1175135/pexels-photo-1175135.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(320deg) translateZ(430px); }
+
+
+
+@keyframes rotate360 {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
 }
